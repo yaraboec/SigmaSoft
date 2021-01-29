@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Project_Sigma
+    .Models.Client>
+@{
+    ViewData["Title"] = "Все пользователи";
+}
+<a asp-action="Create" class="btn btn-primary">Добавить пользователя</a>
+
+<div class="card-deck">
+    @foreach (var client in Model)
+    {
+<div class="card m-3 d-sm-inline-block" style="min-width : 18rem; max-width : 30.5%">
+    <div class="card-header text-center">
+        <h3>@client.Name @client.SurName @client.MiddleName</h3>
+    </div>
+    <div class="card-footer text-center">
+        <a asp-action="Details" asp-controller="Client"
+           asp-route-Id="@client.IdClient"
+           class="btn btn-primary m-1">Посмотреть</a>
+        <a asp-action="Edit" asp-controller="Client"
+           asp-route-id="@client.IdClient" 
+           class="btn btn-primary m-1">Изменить</a>
+        <a asp-action="Delete"
+           asp-controller="Client"
+           asp-route-id="@client.IdClient" 
+           class="btn btn-primary m-1">Удалить</a>
+    </div>
+</div>
+    }
+</div>
+

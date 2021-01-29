@@ -1,0 +1,29 @@
+﻿@model Project_Sigma.Models.PizzaContainIngr
+@{
+    ViewBag.Title = "Редактирование";
+}
+
+<form asp-action="EditIngr"
+      asp-controller="Add"
+      asp-route-idPiz="@Model.IdPizza"
+      asp-route-idIng="@Model.IdIngredient">
+    <div class="form-group">
+        <label asp-for="IdPizza" class="control-label">ПИЦА</label>
+        <input type="number" asp-for="IdPizza" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdIngredient" class="control-label">ИНГР</label>
+        <input type="number" asp-for="IdIngredient" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight" class="control-label">ВЕС</label>
+        <input type="number" asp-for="Weight" class="form-control" />
+    </div>
+    <p></p>
+    <p></p>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+    </div>
+
+</form>

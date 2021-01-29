@@ -1,0 +1,23 @@
+﻿@model Project_Sigma.Models.Pizza
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Пицца @Model.Name</h2>
+<div class="row justify-content-center m-3">
+    <div class="ol-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>Дополнительная информация</h1>
+            </div>
+            <div class="card-body text-center">
+                <h4>Цена за изговление пиццы : @Model.PriceWork </h4>
+                <h4>Итоговая сумма : @Model.ResultPrice </h4>
+                <h4>Состав : @Model.Sostav </h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Index" asp-controller="Add" class="btn btn-primary">Вернуться</a>
+            </div>
+        </div>
+    </div>
+
+</div>

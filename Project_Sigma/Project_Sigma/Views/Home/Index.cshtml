@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Project_Sigma.Models.Pizza>
+@{
+    ViewData["Title"] = "Каталог товаров";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@if(TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">
+            &times;
+        </button>
+        <strong>Успех!</strong>
+       @if(TempData["Action"] != null)
+        { <label>Вы попали под акцию @TempData["Action"], так как заказали с @TempData["Begin"] до @TempData["End"]</label>}
+        @TempData["msg"]
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-10 col-md-10 col-sm-10">
+        @if (TempData["total"] == null)
+        {
+            <h3>
+                Текущая сумма заказа : 0
+            </h3>
+        }
+        else
+        {
+            <h3>
+                Total Bill : @TempData["total"]
+            </h3>
+        }
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center">
+            <a class="btn btn-info"  asp-action="checkout" asp-controller="Home">Check Out</a>
+            </h3>
+    </div>
+
+</div>
+<h3 class="text-center" >Пиццы</h3>
+<div class="text-center">
+    @foreach (var pizza in Model)
+    {
+        <div class="lab">
+            <h2> @pizza.Name </h2>
+            <p>Состав : @pizza.Sostav</p>
+            <p>Цена : @pizza.ResultPrice.ToString("c") </p>
+            <a><img class="lab-photo" asp-append-version="true" width="400" height="400" src="~/Img/@pizza.Img" alt="@pizza.Name"></img></a>
+            <p></p>
+            <p><a class="btn btn-primary" asp-action="Addtocard" asp-route-id="@pizza.IdPizza" >
+                <i style="font-size:24px" class="fa"> &#xf07a; </i> Добавить в корзину</a></p>
+        </div>
+    }
+
+</div>

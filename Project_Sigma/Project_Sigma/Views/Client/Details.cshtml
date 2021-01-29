@@ -1,0 +1,40 @@
+﻿@using Project_Sigma
+@model dynamic
+@{
+    ViewBag.Title = Model.Client.Name;
+}
+<h2>Пользователь @Model.Client.Name @Model.Client.SurName</h2>
+<div class="row justify-content-center m-3">
+    <div class="ol-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>Дополнительная информация</h1>
+            </div>
+            <div class="card-body text-center">
+                <h4>Номер телефона : @Model.Client.Number </h4>
+                <h4>Электронная почта : @Model.Client.Email </h4>
+                <h4>Персональная скидка : @Model.Client.Skidka% </h4>
+            </div>
+        </div>
+    </div>
+</div>
+@if (Model.Order != null)
+{
+<div class="row justify-content-center m-3">
+    <div class="ol-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>Заказы</h1>
+            </div>
+            <div class="card-body text-center">
+                <h4>Время заказа : @Model.Order.TimeOrder </h4>
+                <h4>Сумма заказа : @Model.Order.Sum </h4>
+                <h4>Номер заказа : @Model.Order.IdOrder</h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Index" asp-controller="Client" class="btn btn-primary">Вернуться</a>
+            </div>
+        </div>
+    </div>
+</div>
+}

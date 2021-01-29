@@ -1,0 +1,24 @@
+﻿@model Project_Sigma.Models.Action
+
+@{
+    ViewBag.Title = "Удаление Акции";
+}
+<div class="row justify-content-center m-3">
+    <div class="ol-sm-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <p class="lab-title"> Название акции </p>
+                <p class="lab-title">@Html.DisplayFor(model => model.Name)</p>
+            </div>
+            <div class="text-center card-body">
+                <form asp-controller="Action" asp-action="Delete" method="post">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Удалить" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>

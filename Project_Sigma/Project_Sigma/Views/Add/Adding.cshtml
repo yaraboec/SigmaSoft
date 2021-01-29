@@ -1,0 +1,34 @@
+﻿@model Project_Sigma.ViewModels.PizzaContIngr
+
+@{
+    ViewData["Title"] = "PizCont";
+}
+
+
+<div>
+    @using (Html.BeginForm("Adding", "PizzaContainIng", FormMethod.Post))
+    {
+        <p style="text-decoration:underline">Добавление ингредиентов в пиццу</p>
+
+        <div class="form-group">
+            @Html.DisplayNameFor(Model => Model.IdPizza)
+            @Html.DropDownListFor(model => model.IdPizza, new SelectList(Model.Pizza, "IdPizza", "Name"), "", new { @class = "form-control", style = "width : 400px" })
+        </div>
+
+        <div class="form-group">
+            @Html.DisplayNameFor(Model => Model.IdIngredient)
+            @Html.DropDownListFor(model => model.IdIngredient, new SelectList(Model.Ingredient, "IdIngredient", "Name"), "", new { @class = "form-control", style = "width : 400px" })
+        </div>
+
+        <div class="form-group">
+            @Html.DisplayNameFor(Model => Model.Weight)
+            @Html.TextBoxFor(Model => Model.Weight, new { @class = "form-control", style = "width : 400px" })
+        </div>
+        <p></p>
+        <p></p>
+        <div class="form-group">
+            <input type="submit" asp-controller="Add" name="name" value="Сохранить" class="btn btn-primary" />
+        </div>
+    }
+</div>
+

@@ -1,0 +1,23 @@
+﻿@model Project_Sigma.Models.Action
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Акция @Model.Name</h2>
+<div class="row justify-content-center m-3">
+    <div class="ol-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>Дополнительная информация</h1>
+            </div>
+            <div class="card-body text-center">
+                <h4>Процент скидки : @Model.PercentSkidki </h4>
+                <h4>Время начала : @Model.BeginAction </h4>
+                <h4>Время окончания : @Model.EndAction </h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Index" asp-controller="Action" class="btn btn-primary">Вернуться</a>
+            </div>
+        </div>
+    </div>
+
+</div>

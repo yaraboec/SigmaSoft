@@ -1,0 +1,25 @@
+﻿@model Project_Sigma.Models.Action
+@{
+    ViewBag.Title = "Добавление акции";
+}
+<form asp-action="create" asp-controller="Action">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Название акции</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PercentSkidki" class="control-label">Процент скидки</label>
+        <input type="number" asp-for="PercentSkidki" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="BeginAction" class="control-label">Начало акции</label>
+        <input type="time" asp-for="BeginAction" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EndAction" class="control-label">Конец акции</label>
+        <input type="time" asp-for="EndAction" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>
