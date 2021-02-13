@@ -13,10 +13,14 @@
                 <h3>@client.Name</h3>
             </div>
             <div class="card-footer text-center">
-                <a asp-action="Details" 
+                <a asp-action="Details"
                    asp-controller="Add"
                    asp-route-id="@client.IdPizza"
                    class="btn btn-primary m-1">Посмотреть</a>
+                <a asp-action="Edit"
+                   asp-controller="Add"
+                   asp-route-id="@client.IdPizza"
+                   class="btn btn-primary m-1">Изменить</a>
                 <a asp-action="Delete"
                    asp-controller="Add"
                    asp-route-id="@client.IdPizza"

@@ -1,38 +1,37 @@
 ﻿@model Project_Sigma.ViewModels.PizzaViewModel
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#submitBtn").click(function () {
-            alert("Пицца успешно добавлена")
-        });
-    });
-
-</script>
 <form asp-action="Create" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="row">
-            <div class="col-md-4">
-                <div>
-                    <p>Название</p>
-                    <input asp-for="Name" class="form-control someclass" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <p></p>
-                <div>
-                    <p>Фотография</p>
-                    <input asp-for="Img" class="form-control someclass" multiple />
-                    <span asp-validation-for="Img" class="text-danger"></span>
-                </div>
-                <p></p>
-                <div>
-                    <p>Цена за работу</p>
-                    <input asp-for="PriceWork" class="form-control someclass" />
-                    <span asp-validation-for="PriceWork" class="text-danger"></span>
-                </div>
-                <p></p>
-                <div class="form-group">
-                    <input type="submit" value="Добавить пиццу" id="submitBtn" class="btn btn-primary" />
-                </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <p>Название</p>
+                <input asp-for="Name" class="form-control someclass" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+
             </div>
+            <p></p>
+            <div>
+                <p>Фотография</p>
+                <input asp-for="Img" class="form-control someclass" multiple />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div>
+                <p>Цена за работу</p>
+                <input asp-for="PriceWork" class="form-control someclass" />
+                <span asp-validation-for="PriceWork" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Добавить пиццу" id="submitBtn" class="btn btn-primary" />
+            </div>
+        </div>
     </div>
 </form>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

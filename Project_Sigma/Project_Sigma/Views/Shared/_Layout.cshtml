@@ -38,14 +38,15 @@
             </div>
         </nav>
     </header>
-        <!--основной контент-->
-        <div class="container body-content">
-            @RenderBody()
-            <footer>
-                <hr />
-                <p>© 2021 - Pizzeria</p>
-            </footer>
-        </div>
+
+    <div class="container body-content">
+        @RenderSection("scripts", required: false)
+        @RenderBody()
+        <footer>
+            <hr />
+            <p>© 2021 - Pizzeria</p>
+        </footer>
+    </div>
         <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

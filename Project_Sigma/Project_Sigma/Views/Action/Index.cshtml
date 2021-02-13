@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Project_Sigma
         .Models.Action>
 @{
-    ViewData["Title"] = "Все пользователи";
+    ViewData["Title"] = "Все акции";
 }
 <a asp-action="Create" class="btn btn-primary">Добавить Акцию</a>
 
@@ -13,10 +13,14 @@
                 <h3>@client.Name</h3>
             </div>
             <div class="card-footer text-center">
-                <a asp-action="Details" 
+                <a asp-action="Details"
                    asp-controller="Action"
                    asp-route-Id="@client.IdAction"
                    class="btn btn-primary m-1">Посмотреть</a>
+                <a asp-action="Edit"
+                   asp-controller="Action"
+                   asp-route-Id="@client.IdAction"
+                   class="btn btn-primary m-1">Изменить</a>
                 <a asp-action="Delete"
                    asp-controller="Action"
                    asp-route-id="@client.IdAction"

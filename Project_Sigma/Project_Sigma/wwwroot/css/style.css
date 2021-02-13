@@ -30,9 +30,18 @@ body {
     color: #131115;
 }
 
+
 .lab-subtitle {
     font-size: 40px;
     color: #c9bebe;
 }
+.game-hearts-icon {
+    background: transparent url(../images/game-hearts-icon.png) scroll 0 0 no-repeat;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    width: 64px;
+}
+
 
 

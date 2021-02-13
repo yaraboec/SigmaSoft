@@ -39,5 +39,9 @@ namespace Project_Sigma.Data
         {
             _context.Pizzas.Update(pizza);
         }
+        public Pizza GetById(int id)
+        {
+            return _context.Pizzas.Where(e => e.IdPizza == id).FirstOrDefault();
+        }
     }
 }

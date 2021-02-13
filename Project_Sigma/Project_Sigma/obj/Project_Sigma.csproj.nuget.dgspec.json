@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yaros\\Desktop\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj": {}
+    "C:\\Users\\yaros\\Documents\\GitHub\\SigmaSoft\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yaros\\Desktop\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj": {
+    "C:\\Users\\yaros\\Documents\\GitHub\\SigmaSoft\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yaros\\Desktop\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj",
+        "projectUniqueName": "C:\\Users\\yaros\\Documents\\GitHub\\SigmaSoft\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj",
         "projectName": "Project_Sigma",
-        "projectPath": "C:\\Users\\yaros\\Desktop\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj",
+        "projectPath": "C:\\Users\\yaros\\Documents\\GitHub\\SigmaSoft\\Project_Sigma\\Project_Sigma\\Project_Sigma.csproj",
         "packagesPath": "C:\\Users\\yaros\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yaros\\Desktop\\Project_Sigma\\Project_Sigma\\obj\\",
+        "outputPath": "C:\\Users\\yaros\\Documents\\GitHub\\SigmaSoft\\Project_Sigma\\Project_Sigma\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yaros\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[5.2.7, )"
             },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
@@ -70,6 +74,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -77,6 +85,10 @@
               "version": "[5.0.2, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
@@ -111,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -143,6 +143,49 @@ namespace Project_Sigma.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id != null)
+            {
+                Pizza piz = await _context.Pizzas.FirstOrDefaultAsync(p => p.IdPizza == id);
+                PizzeEditViewModel pizEdit = new PizzeEditViewModel
+                {
+                    IdPizza = piz.IdPizza,
+                    Name = piz.Name,
+                    PriceWork = piz.PriceWork,
+                    ExistImg = piz.Img
+                };
+                return View(pizEdit);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(PizzeEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Pizza pizza = _context.Pizzas.Where(c => c.IdPizza == model.IdPizza).FirstOrDefault();
+                pizza.Name = model.Name;
+                pizza.PriceWork = model.PriceWork;
+                if (model.Img != null)
+                {
+
+                    if (model.ExistImg != null)
+                    {
+                        string filePath = Path.Combine(_webEnv.WebRootPath,
+                            "Img", model.ExistImg);
+                        System.IO.File.Delete(filePath);
+                    }
+                    pizza.Img = UploadedFile(model);
+                }
+                _context.Pizzas.Update(pizza);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("index");
+            }
+
+            return View(model);
+        }
         public async Task<IActionResult> Details(int? id)
         {
             if (id != null)
@@ -161,7 +204,7 @@ namespace Project_Sigma.Controllers
             if (model.Img != null)
             {
                 string uploadsFolder = Path.Combine(_webEnv.WebRootPath,"Img");
-                uniqueFileName = Guid.NewGuid().ToString() + "-" + model.Img.FileName;
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Img.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {

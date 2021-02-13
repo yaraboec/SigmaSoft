@@ -20,6 +20,23 @@ namespace Project_Sigma.Controllers
         {
             return View(await _context.Actions.ToListAsync());
         }
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id != null)
+            {
+                Models.Action user = await _context.Actions.FirstOrDefaultAsync(p => p.IdAction == id);
+                if (user != null)
+                    return View(user);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Models.Action user)
+        {
+            _context.Actions.Update(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
         public IActionResult Create()
         {
             return View();

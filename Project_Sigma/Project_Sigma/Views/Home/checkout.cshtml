@@ -2,7 +2,11 @@
 @{
     ViewBag.Title = "checkout";
 }
-
+<script>
+    function DelProd() {
+        @TempData["Card"] = null;
+    }
+</script>
 @if (TempData["Cart"] != null)
 {
 
@@ -50,7 +54,7 @@ else
 {
     @using (Html.BeginForm())
      {
-<label>Ваш уникальный номер :</label> @Html.TextBoxFor(s => s.clientid)
+    <label>Ваш уникальный номер :</label> @Html.TextBoxFor(s => s.clientid)
 
      <input type="submit" value="Заказать" class="btn btn-primary"/>
     }
