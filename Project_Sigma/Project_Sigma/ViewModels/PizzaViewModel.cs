@@ -18,7 +18,7 @@ namespace Project_Sigma.ViewModels
         [Required]
         [DisplayName("Цена за работу")]
         public int PriceWork { get; set; }
-        [Required]
+
         [DisplayName("Изображение")]
         public IFormFile Img { get; set; }
 

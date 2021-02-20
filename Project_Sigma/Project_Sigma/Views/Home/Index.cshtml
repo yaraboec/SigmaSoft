@@ -19,22 +19,16 @@
 
 <div class="row">
     <div class="col-lg-10 col-md-10 col-sm-10">
-        @if (TempData["total"] == null)
+        @if (TempData["total"] != null)
         {
-            <h3>
-                Текущая сумма заказа : 0
-            </h3>
-        }
-        else
-        {
-            <h3>
-                Total Bill : @TempData["total"]
-            </h3>
+        <h3>
+            Текущая сумма заказа : @TempData["total"]
+        </h3>
         }
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2">
         <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center">
-            <a class="btn btn-info"  asp-action="checkout" asp-controller="Home">Check Out</a>
+            <a class="btn btn-info"  asp-action="checkout" asp-controller="Home">Корзина</a>
             </h3>
     </div>
 
